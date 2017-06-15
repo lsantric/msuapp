@@ -6,7 +6,8 @@ process.title = "msuapp";
 var express = require('express'),
     routes = require('./routes'),
     fs = require('fs'),
-    http = require('http'),
+    http = require('https'),
+    pem = require('pem'),
     path = require('path'),
     favicon = require('serve-favicon'),
     methodOverride = require('method-override'),
@@ -14,27 +15,38 @@ var express = require('express'),
     logger = require('morgan'),
     errorHandler = require('errorhandler');
 
-app = express();
+pem.createCertificate({
+    days: 365,
+    selfSigned: true
+}, function(err, keys) {
 
-// all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+    app = express();
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(methodOverride());
-app.use(express.static(path.join(__dirname, 'public')));
+    // all environments
+    app.set('port', process.env.PORT || 3000);
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'jade');
 
-// development only
-if ('development' == app.get('env')) {
-    app.use(errorHandler());
-}
+    app.use(favicon(__dirname + '/public/favicon.ico'));
+    app.use(logger('dev'));
+    app.use(methodOverride());
+    app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
-app.get('*', routes.index);
+    // development only
+    if ('development' == app.get('env')) {
+        app.use(errorHandler());
+    }
 
-http.createServer(app).listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
+    app.get('/', routes.index);
+    app.get('/partials/:name', routes.partials);
+    app.get('*', routes.index);
+
+    httpsOptions = {
+        key: keys.serviceKey,
+        cert: keys.certificate
+    };
+
+    http.createServer(httpsOptions, app).listen(app.get('port'), function() {
+        console.log('Express server listening on port ' + app.get('port'));
+    });
 });
