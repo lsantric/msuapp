@@ -1,8 +1,8 @@
 var controllers = angular.module('msuapp.controllers', []);
 
 controllers.controller('IndexController', ['$scope', function($scope) {
-	$scope.message = 'Hello From Angular';
-	$scope.name = 'bob';
+	$scope.message = 'Tvoje gps koordinate su:';
+	$scope.name = 'Missing artists';
 }]);
 
 controllers.controller('geolocCtrl', ['$geolocation', '$scope', function($geolocation, $scope) {
