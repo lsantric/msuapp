@@ -1,0 +1,14 @@
+doctype html
+html(ng-app="msuapp")
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js", type="application/javascript")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js", type="application/javascript")
+    script(src="msuapp/msuapp.js",type="application/javascript")
+    script(src="msuapp/lib/ngGeolocation.js",type="application/javascript")
+    script(src="msuapp/controllers.js",type="application/javascript")
+    script(src="msuapp/directives.js",type="application/javascript")
+    base(href='/')
+  body
+    div(ng-view)
+      block content
