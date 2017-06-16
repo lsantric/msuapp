@@ -1,4 +1,4 @@
-var app = angular.module('msuapp', ['msuapp.controllers', 'msuapp.directives', 'ngRoute', 'ngGeolocation']);
+var app = angular.module('msuapp', ['msuapp.controllers', 'msuapp.directives', 'ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
 
