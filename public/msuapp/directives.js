@@ -11,8 +11,6 @@ directives.directive('locationContent', function() {
     return {
         restrict: 'C',
         templateUrl: function(element, attributes) {
-            console.log(element);
-            console.log(attributes);
             return 'partials/locations/location_' + 1 + '.jade';
         }
     };

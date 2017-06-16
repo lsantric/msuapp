@@ -15,38 +15,32 @@ var express = require('express'),
     logger = require('morgan'),
     errorHandler = require('errorhandler');
 
-pem.createCertificate({
-    days: 365,
-    selfSigned: true
-}, function(err, keys) {
+app = express();
 
-    app = express();
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 
-    // all environments
-    app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'jade');
+app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(methodOverride());
+app.use(express.static(path.join(__dirname, 'public')));
 
-    app.use(favicon(__dirname + '/public/favicon.ico'));
-    app.use(logger('dev'));
-    app.use(methodOverride());
-    app.use(express.static(path.join(__dirname, 'public')));
+// development only
+if ('development' == app.get('env')) {
+    app.use(errorHandler());
+}
 
-    // development only
-    if ('development' == app.get('env')) {
-        app.use(errorHandler());
-    }
+app.get('/', routes.index);
+app.get('/partials/:name', routes.partials);
+app.get('/partials/:subpath/:name', routes.subpartials);
 
-    app.get('/', routes.index);
-    app.get('/partials/:name', routes.partials);
-    app.get('/partials/:subpath/:name', routes.subpartials);
+httpsOptions = {
+    key: keys.serviceKey,
+    cert: keys.certificate
+};
 
-    httpsOptions = {
-        key: keys.serviceKey,
-        cert: keys.certificate
-    };
-
-    http.createServer(httpsOptions, app).listen(app.get('port'), function() {
-        console.log('Express server listening on port ' + app.get('port'));
-    });
+http.createServer(app).listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + app.get('port'));
 });
