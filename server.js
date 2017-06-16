@@ -40,6 +40,7 @@ pem.createCertificate({
     app.get('/', routes.index);
     app.get('/partials/:name', routes.partials);
     app.get('/partials/:subpath/:name', routes.subpartials);
+    app.get('/partials/:sub2path/:subpath/:name', routes.sub2partials);
 
     httpsOptions = {
         key: keys.serviceKey,
