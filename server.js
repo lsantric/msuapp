@@ -6,7 +6,7 @@ process.title = "msuapp";
 var express = require('express'),
     routes = require('./routes'),
     fs = require('fs'),
-    http = require('https'),
+    http = require('http'),
     pem = require('pem'),
     path = require('path'),
     favicon = require('serve-favicon'),
@@ -27,20 +27,10 @@ app.use(logger('dev'));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
-if ('development' == app.get('env')) {
-    app.use(errorHandler());
-}
-
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('/partials/:subpath/:name', routes.subpartials);
 app.get('/partials/:sub2path/:subpath/:name', routes.sub2partials);
-
-httpsOptions = {
-    key: keys.serviceKey,
-    cert: keys.certificate
-};
 
 http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
