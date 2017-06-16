@@ -42,30 +42,26 @@
 
 
 /* LOCATION CONTENT */
-.content-article {
-    padding-left: 3%;
-    padding-right: 30%;
+.content-article-mobile {
+
 }
 
-.locationContent {
-    width: 78%;    
-    display: inline-block;
-    float: right;
+.locationContent-mobile {
+
 }
 
-.content-header {
+.content-header-mobile {
     font-family: 'Rubik Mono One';
     font-size: 22px;
 }
 
-.content-name {
+.content-name-mobile {
     font-family: 'Source Sans Pro';
     font-size: 22px;
     margin-top: -1%;
 }
 
-.content-text {
+.content-text-mobile {
     font-family: 'Source Sans Pro';
     font-size: 20px;
-    padding-right: 20%;
 }

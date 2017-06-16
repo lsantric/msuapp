@@ -15,3 +15,12 @@ directives.directive('locationContent', function() {
         }
     };
 });
+
+directives.directive('locationContentMobile', function() {
+    return {
+        restrict: 'C',
+        templateUrl: function(element, attributes) {
+            return 'partials/mobile/locations/location_' + 1 + '.jade';
+        }
+    };
+});
