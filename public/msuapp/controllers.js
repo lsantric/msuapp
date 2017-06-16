@@ -1,19 +1,24 @@
 var controllers = angular.module('msuapp.controllers', []);
 
-controllers.controller('mainController', ['$geolocation', '$scope', function($geolocation, $scope) {
-    $geolocation.watchPosition({
-        timeout: 60000,
-        maximumAge: 250,
-        enableHighAccuracy: true
-    });
+controllers.controller('mainController', ['$scope', '$timeout', function($scope, $timeout) {
 
-    $scope.$on('$geolocation.position.changed', function(event, newPosition){
-        $scope.myPosition = newPosition;
+    id = navigator.geolocation.watchPosition(function(pos) {
+        console.log(pos);
+        $scope.$apply(function() {
+            $scope.myPosition = pos;
+        });
+        $scope.myPosition = pos;
+    }, function error(err) {
+        console.warn('ERROR(' + err.code + '): ' + err.message);
+    }, options = {
+        enableHighAccuracy: false,
+        timeout: 5000,
+        maximumAge: 0
     });
 }]);
 
 controllers.controller('contentController', ['$scope', function($scope) {
-    $scope.myPosition = $scope.$parent.myPosition;
+
 }]);
 
 controllers.controller('sidebarController', ['$scope', function($scope) {
