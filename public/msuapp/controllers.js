@@ -2,13 +2,35 @@ var controllers = angular.module('msuapp.controllers', []);
 
 controllers.controller('mainController', ['$scope', '$timeout', function($scope, $timeout) {
 
-    $scope.selectedContent = 'partials/locations/mobile/unlocation.jade';
+    $scope.selectedContent = 'partials/mobile/locations/unlocation.jade';
 
-    $scope.locationList = [{
-        "url": 'partials/mobile/locations/location_1.jade',
-        "latitude": 45.778304,
-        "longitude": 15.981304
-    }];
+    $scope.locationList = [
+        {
+            "url": 'partials/mobile/locations/location_1.jade',
+            "latitude": 45.779011, 
+            "longitude": 15.981256
+        },
+                {
+            "url": 'partials/mobile/locations/location_2.jade',
+            "latitude": 45.7785946,
+            "longitude": 15.9818147
+        },
+                {
+            "url": 'partials/mobile/locations/location_3.jade',
+            "latitude": 45.778304, 
+            "longitude": 15.981304
+        },
+                {
+            "url": 'partials/mobile/locations/location_4.jade',
+            "latitude": 45.778419, 
+            "longitude": 15.982292
+        },
+                {
+            "url": 'partials/mobile/locations/location_5.jade',
+            "latitude": 45.779159, 
+            "longitude": 15.982340
+        }
+    ];
 
     id = navigator.geolocation.watchPosition(function(pos) {
         console.log(pos);
@@ -25,7 +47,9 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
 
     $scope.$watch('myPosition', function(value) {
 
-        if (value !== null) {
+        if (typeof value != 'undefined') {
+
+            console.log(value);
 
             var diffs = [];
             $scope.locationList.forEach(function(elem, index, array) {
