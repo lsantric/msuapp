@@ -2,74 +2,37 @@
     overflow: hidden;
 }
 
-/* TOPBAR */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.icon {
-    float: right;
-    display: block;
-  }
-
 /* SIDEBAR */
-.sidebar {
-    width: 20%;
-    height: 100%;
-    vertical-align: middle;
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    position: fixed;
+.sidebarMobile {
     background-color: yellow;
 }
 
-.sidebar-article {
-    top: 30%;
-    padding-left: 10%;
-    padding-right: 20%;
+.sidebar-article-mobile {
+  padding: 40px;
 }
 
-.sidebar-header {
+.sidebar-header-mobile {
     font-family: 'Rubik Mono One';
     font-size: 22px;
 }
 
-.sidebar-name {
+.sidebar-name-mobile {
     font-family: 'Rubik Mono One';
-    font-size: 36px;    
-    margin-top: 10%;
+    font-size: 86px;
     word-wrap: break-word;
 }
 
-.sidebar-text {
+.sidebar-text-mobile {
     font-family: 'Source Sans Pro';
-    font-size: 20px;
-    height: 100%;
-    margin-top: 10%;
-    top: 50%;
+    font-size: 46px;
+    overflow: hidden;
+    height: 3em;
 }
 
 
 /* LOCATION CONTENT */
 .content-article-mobile {
-    padding-top: 20px;
+    padding: 40px;
 }
 
 .locationContent-mobile {
@@ -84,7 +47,7 @@
 .content-name-mobile {
     font-family: 'Source Sans Pro';
     font-size: 22px;
-    margin-top: -2%;
+    margin-top: -20px;
 }
 
 .content-text-mobile {
