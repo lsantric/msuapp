@@ -26,7 +26,6 @@
     font-family: 'Source Sans Pro';
     font-size: 46px;
     overflow: hidden;
-    height: 3em;
 }
 
 
@@ -41,18 +40,18 @@
 
 .content-header-mobile {
     font-family: 'Rubik Mono One';
-    font-size: 22px;
+    font-size: 32px;
 }
 
 .content-name-mobile {
     font-family: 'Source Sans Pro';
-    font-size: 22px;
+    font-size: 32px;
     margin-top: -20px;
 }
 
 .content-text-mobile {
     font-family: 'Source Sans Pro';
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .content-img-mobile {
