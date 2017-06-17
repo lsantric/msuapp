@@ -6,7 +6,7 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
 
     $scope.locationList = [{
         "url": 'partials/mobile/locations/location_1.jade',
-        "latitude": 45.802237, 
+        "latitude": 45.802237,
         "longitude": 15.998023
     }];
 
@@ -22,10 +22,10 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
         timeout: 5000,
         maximumAge: 0
     });
-  
+
     $scope.$watch('myPosition', function(value) {
 
-        if (value != null) {
+        if (value !== null) {
 
             var diffs = [];
             $scope.locationList.forEach(function(elem, index, array) {
@@ -33,18 +33,23 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
             });
             console.log(diffs);
 
-            min=9999999999999;
-            minId=-1;
-            for (var i=0; i<diffs.length; i++) {
+            min = 9999999999999;
+            minId = -1;
+            for (var i = 0; i < diffs.length; i++) {
                 if (diffs[i] < min) {
                     min = diffs[i];
                     minId = i;
                 }
-            };
+            }
 
             if (min < 20) {
                 $scope.selectedContent = $scope.locationList[minId].url;
+            } else {
+                $scope.selectedContent = 'partials/mobile/locations/unlocation.jade';
             }
+
+        } else {
+            $scope.selectedContent = 'partials/mobile/locations/unlocation.jade';
         }
     });
 
