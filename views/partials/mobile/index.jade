@@ -1,3 +1,3 @@
 div(class="main-container")
     div(class="sidebarMobile" ng-controller="sidebarControllerMobile" ng-include="'partials/mobile/sidebar.jade'" ng-click="toggleHeight()")
-    div(class="locationContentMobile" ng-controller="contentControllerMobile")
+    div(class="locationContentMobile" ng-controller="contentControllerMobile" ng-include="selectedContent")
