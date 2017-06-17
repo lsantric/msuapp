@@ -118,6 +118,8 @@ controllers.controller('mainControllerMobile', ['$scope', '$timeout', function($
                 $scope.selectedContent = 'partials/mobile/locations/unlocation.jade';
             }
 
+        } else {
+            $scope.selectedContent = 'partials/mobile/locations/unlocation.jade';
         }
     });
 
