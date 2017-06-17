@@ -21,6 +21,18 @@ controllers.controller('contentController', ['$scope', function($scope) {
 
 }]);
 
+controllers.controller('contentControllerMobile', ['$scope', function($scope) {
+
+}]);
+
 controllers.controller('sidebarController', ['$scope', function($scope) {
 
+}]);
+
+controllers.controller('sidebarControllerMobile', ['$scope', function($scope) {
+
+    $scope.extended = false;
+    $scope.toggleHeight = function () {
+        $scope.extended = !$scope.extended;
+    }
 }]);

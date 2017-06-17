@@ -24,3 +24,19 @@ directives.directive('locationContentMobile', function() {
         }
     };
 });
+
+directives.directive('sidebarTextMobile', function() {
+    return {
+        restrict: 'C',
+        link: function(scope, element, attributes) {
+
+            console.log(element);
+            ang_element = angular.element(element)[0];
+            height = element[0].offsetHeight;
+
+            scope.$watch(function() { return scope.extended; }, function(value) {
+                element.css("height", element.css("height") ? "" : "3em");
+            });
+        }
+    }; 
+});
