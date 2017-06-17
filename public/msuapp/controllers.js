@@ -6,8 +6,8 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
 
     $scope.locationList = [{
         "url": 'partials/mobile/locations/location_1.jade',
-        "latitude": 45.802237,
-        "longitude": 15.998023
+        "latitude": 45.778304,
+        "longitude": 15.981304
     }];
 
     id = navigator.geolocation.watchPosition(function(pos) {
