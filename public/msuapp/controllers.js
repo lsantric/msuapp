@@ -18,9 +18,9 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
     }, function error(err) {
         console.warn('ERROR(' + err.code + '): ' + err.message);
     }, options = {
-        enableHighAccuracy: false,
-        timeout: 5000,
-        maximumAge: 0
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 5000
     });
 
     $scope.$watch('myPosition', function(value) {
