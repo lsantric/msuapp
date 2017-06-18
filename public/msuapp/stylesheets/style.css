@@ -34,7 +34,7 @@
 
 .sidebar-text {
     font-family: 'Source Sans Pro';
-    font-size: 20px;
+    font-size: 22px;
     height: 100%;
     margin-top: 10%;
     top: 50%;
@@ -48,9 +48,9 @@
 }
 
 .locationContent {
-    width: 78%;    
-    display: inline-block;
-    float: right;
+    width: 80%;    
+    position: absolute;
+    left: 20%;
 }
 
 .content-header {
