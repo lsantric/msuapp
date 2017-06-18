@@ -2,28 +2,36 @@ var controllers = angular.module('msuapp.controllers', []);
 
 controllers.controller('mainController', ['$scope', '$timeout', function($scope, $timeout, isMobile) {
 
-    var mobileExtension = isMobile ? '/mobile' : '';
+    isMobile = function detectmob() {
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-    $scope.selectedContent = 'partials/' + mobileExtension + 'locations/unlocation.jade';
+    var mobileExtension = isMobile() ? '/mobile' : '';
+
+    $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation.jade';
 
     $scope.locationList = [{
-        "url": 'partials/' + mobileExtension + 'locations/location_1.jade',
+        "url": 'partials' + mobileExtension + '/locations/location_1.jade',
         "latitude": 45.779011,
         "longitude": 15.981256
     }, {
-        "url": 'partials/' + mobileExtension + 'locations/location_2.jade',
+        "url": 'partials' + mobileExtension + '/locations/location_2.jade',
         "latitude": 45.7785946,
         "longitude": 15.9818147
     }, {
-        "url": 'partials/' + mobileExtension + 'locations/location_3.jade',
+        "url": 'partials' + mobileExtension + '/locations/location_3.jade',
         "latitude": 45.778304,
         "longitude": 15.981304
     }, {
-        "url": 'partials/' + mobileExtension + 'locations/location_4.jade',
+        "url": 'partials' + mobileExtension + '/locations/location_4.jade',
         "latitude": 45.778419,
         "longitude": 15.982292
     }, {
-        "url": 'partials/' + mobileExtension + 'locations/location_5.jade',
+        "url": 'partials' + mobileExtension + '/locations/location_5.jade',
         "latitude": 45.779159,
         "longitude": 15.982340
     }];
@@ -65,7 +73,7 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
             if (min < 20) {
                 $scope.selectedContent = $scope.locationList[minId].url;
             } else {
-                $scope.selectedContent = 'partials/' + mobileExtension + 'locations/unlocation.jade';
+                $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation.jade';
             }
 
         }
