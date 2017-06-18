@@ -1,0 +1,24 @@
+.unlocation-article {
+    background-color: yellow;
+    padding: 40px;
+    padding-bottom: 0px;
+    height: 100%;
+    position: fixed;
+    width: 76%;
+}
+
+.unlocation-warning {
+    margin-top: 0px;
+    font-family: 'Rubik Mono One';
+    font-size: 36px;
+}
+
+.unlocation-text {
+    font-family: 'Source Sans Pro';
+    font-size: 26px;
+}
+
+.unlocation-img {
+    height: 80%;
+    padding-left: 15%;
+}
