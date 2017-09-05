@@ -112,12 +112,9 @@ controllers.controller('sidebarController', ['$scope', function($scope) {
 
 controllers.controller('sidebarControllerMobile', ['$scope', function($scope) {
 
-    $scope.firstRun = true;
-
     $scope.extended = false;
-    $scope.toggleHeight = function() {
+    $scope.toggleAbout = function() {
+        console.log("Utisnuto, kapetane!");
         $scope.extended = !$scope.extended;
     };
-    $scope.toggleHeight();
-    $scope.toggleHeight();
 }]);

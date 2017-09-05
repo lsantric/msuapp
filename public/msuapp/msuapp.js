@@ -11,7 +11,7 @@ app.config(['$routeProvider', function($routeProvider) {
     };
 
     $routeProvider.when('/', {
-        templateUrl: isMobile() ? 'partials/mobile/index' : 'partials/index',
+        templateUrl: 'partials/mobile/index',
         controller: 'mainController',
     }).otherwise({
         redirectTo: '/'

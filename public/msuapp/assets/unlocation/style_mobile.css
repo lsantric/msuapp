@@ -1,14 +1,31 @@
 .unlocation-article-mobile {
-	background-color: yellow;
-	padding: 40px;
+	padding: 25px;
+	text-align: center;
 }
 
 .unlocation-warning-mobile {
-	margin-top: 0px;
-    font-family: 'Rubik Mono One';
-    font-size: 46px;
+    margin-top: 0px;
+    font-family: 'Source San Pro Black';
+    font-style: italic;
+    font-size: 17pt;
+    line-height: 20.5pt;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .unlocation-text-mobile {
-	font-family: 'Source Sans Pro';
+    font-family: 'Source San Pro Black';
+    font-style: italic;
+    font-size: 15pt;
+    line-height: 18pt;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-img-mobile {
+    display: block;
+    margin: auto;
+    max-width: 100%;
 }
