@@ -8,30 +8,93 @@
 }
 
 .sidebar-article-mobile {
-  padding: 40px;
+  padding: 25px;
+}
+
+.sidebar-about-button {
+    font-family: 'Source Sans Pro Black';
+    font-size: 13pt;
+    font-style: italic;
+    float: left;
+    border: 3pt solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sidebar-language {
+    font-family: 'Source Sans Pro Black';
+    font-size: 13pt;
+    font-style: italic;
+    float:right;
+    border: 3pt solid black;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .sidebar-header-mobile {
     font-family: 'Rubik Mono One';
-    font-size: 22px;
+    font-size: 21pt;
+    clear: both;
+    padding-top: 15px;
+    margin-bottom: 10px;
 }
 
 .sidebar-name-mobile {
     font-family: 'Rubik Mono One';
-    font-size: 86px;
-    word-wrap: break-word;
+    font-size: 31pt;
+    line-height: 37.5pt;
+    word-spacing: 100vw;
+    margin-top: 10px;
+    /*word-wrap: break-word;*/
 }
 
-.sidebar-text-mobile {
-    font-family: 'Source Sans Pro';
-    font-size: 46px;
-    overflow: hidden;
+.sidebar-location-mobile {
+    font-family: 'Source Sans Pro Black';
+    font-size: 15pt;
+    max-width: 300px;
+    margin-bottom: 0px;
 }
 
+.sidebar-about-mobile {
+    font-family: 'Source Sans Pro Black';
+    font-size: 15pt;
+    font-style: italic;
+    line-height: 20.5pt;
+    border-top: 3pt solid black;
+    border-bottom: 3pt solid black;
+    padding-top: 25pt;
+    padding-bottom: 25pt;
+}
+
+.sidebar-authors-mobile {
+    font-family: 'Source Sans Pro Black';
+    font-size: 15pt;
+    font-style: italic;
+    line-height: 20.5pt;
+    padding-top: 20.5pt;
+    padding-bottom: 20.5pt;
+}
+
+.sidebar-insitu-mobile {
+    font-family: 'Source Sans Pro Black';
+    font-size: 15pt;
+    font-style: italic;
+    line-height: 20.5pt;
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
 
 /* LOCATION CONTENT */
 .content-article-mobile {
-    padding: 40px;
+    padding: 25px;
 }
 
 .locationContent-mobile {
