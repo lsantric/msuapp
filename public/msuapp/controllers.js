@@ -77,6 +77,8 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
             }
 
         }
+
+        $scope.selectedContent = 'partials' + mobileExtension + '/locations/location_1.jade';
     });
 
     $scope.distance = function(lat1, lon1, lat2, lon2, unit) {
@@ -114,7 +116,6 @@ controllers.controller('sidebarControllerMobile', ['$scope', function($scope) {
 
     $scope.extended = false;
     $scope.toggleAbout = function() {
-        console.log("Utisnuto, kapetane!");
         $scope.extended = !$scope.extended;
     };
 }]);
