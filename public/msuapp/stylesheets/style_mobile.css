@@ -94,7 +94,8 @@ a:visited {
 
 /* LOCATION CONTENT */
 .content-article-mobile {
-    padding: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .locationContent-mobile {
@@ -102,23 +103,30 @@ a:visited {
 }
 
 .content-header-mobile {
-    font-family: 'Rubik Mono One';
-    font-size: 32px;
+    font-family: 'Source Sans Pro';
+    font-size: 17pt;
+    line-height: 22pt;
+    margin-bottom: 0px;
 }
 
 .content-name-mobile {
     font-family: 'Source Sans Pro';
-    font-size: 32px;
-    margin-top: -20px;
+    font-size: 17pt;
+    line-height: 22pt;
+    margin-top: 0px;
 }
 
 .content-text-mobile {
     font-family: 'Source Sans Pro';
-    font-size: 30px;
+    font-size: 15pt;
+    line-height: 20pt;
 }
 
 .content-img-mobile {
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
     max-width: -webkit-fill-available;
 }
