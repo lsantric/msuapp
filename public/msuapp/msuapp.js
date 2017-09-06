@@ -13,6 +13,9 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'partials/mobile/index',
         controller: 'mainController',
+    }).when('/:lang', {
+        templateUrl: 'partials/mobile/index',
+        controller: 'mainController',
     }).otherwise({
         redirectTo: '/'
     });

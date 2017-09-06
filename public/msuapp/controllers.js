@@ -1,6 +1,6 @@
 var controllers = angular.module('msuapp.controllers', []);
 
-controllers.controller('mainController', ['$scope', '$timeout', function($scope, $timeout, isMobile) {
+controllers.controller('mainController', ['$scope', '$timeout', '$routeParams', function($scope, $timeout, $routeParams) {
 
     isMobile = function detectmob() {
         if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
@@ -10,9 +10,14 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
         }
     };
 
+    $scope.lang = "";
+    if ($routeParams.lang) {
+        $scope.lang = "_" + $routeParams.lang;
+    }
+
     var mobileExtension = isMobile() ? '/mobile' : '';
 
-    $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation.jade';
+    $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation' + $scope.lang + '.jade';
 
     $scope.locationList = [{
         "url": 'partials' + mobileExtension + '/locations/location_1.jade',
@@ -71,9 +76,9 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
             }
 
             if (min < 20) {
-                $scope.selectedContent = $scope.locationList[minId].url;
+                $scope.selectedContent = $scope.locationList[minId].url.slice(0, $scope.locationList[minId].url.length - 5) + $scope.lang + ".jade";
             } else {
-                $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation.jade';
+                $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation' + $scope.lang + '.jade';
             }
         }
     });
@@ -109,10 +114,13 @@ controllers.controller('sidebarController', ['$scope', function($scope) {
 
 }]);
 
-controllers.controller('sidebarControllerMobile', ['$scope', function($scope) {
+controllers.controller('sidebarControllerMobile', ['$scope', '$location', function($scope, $location) {
 
     $scope.extended = false;
     $scope.toggleAbout = function() {
         $scope.extended = !$scope.extended;
+    };
+    $scope.go = function (path) {
+        $location.path(path);
     };
 }]);
