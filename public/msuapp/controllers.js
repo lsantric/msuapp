@@ -78,7 +78,7 @@ controllers.controller('mainController', ['$scope', '$timeout', function($scope,
 
         }
 
-        $scope.selectedContent = 'partials' + mobileExtension + '/locations/location_4.jade';
+        $scope.selectedContent = 'partials' + mobileExtension + '/locations/location_5.jade';
     });
 
     $scope.distance = function(lat1, lon1, lat2, lon2, unit) {
