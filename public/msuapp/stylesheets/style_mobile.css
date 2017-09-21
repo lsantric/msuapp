@@ -15,9 +15,10 @@
 }
 
 .sidebar-about-button {
-    font-family: 'Source Sans Pro Black';
+    font-family: 'Source Sans Pro';
     font-size: 13pt;
     font-style: italic;
+    font-weight: 900;
     float: left;
     border: 3pt solid black;
     padding-left: 15px;
@@ -25,9 +26,10 @@
 }
 
 .sidebar-language {
-    font-family: 'Source Sans Pro Black';
+    font-family: 'Source Sans Pro';
     font-size: 13pt;
     font-style: italic;
+    font-weight: 900;
     float:right;
     border: 3pt solid black;
     padding-left: 15px;
@@ -52,16 +54,18 @@
 }
 
 .sidebar-location-mobile {
-    font-family: 'Source Sans Pro Black';
+    font-family: 'Source Sans Pro';
     font-size: 15pt;
+    font-weight: 900;
     max-width: 300px;
     margin-bottom: 20px;
 }
 
 .sidebar-about-mobile {
-    font-family: 'Source Sans Pro Black';
+    font-family: 'Source Sans Pro';
     font-size: 15pt;
     font-style: italic;
+    font-weight: 900;
     line-height: 20.5pt;
     border-top: 3pt solid black;
     border-bottom: 3pt solid black;
@@ -70,16 +74,18 @@
 }
 
 .sidebar-authors-mobile {
-    font-family: 'Source Sans Pro Black';
+    font-family: 'Source Sans Pro';
     font-size: 15pt;
     font-style: italic;
+    font-weight: 900;
     line-height: 20.5pt;
 }
 
 .sidebar-insitu-mobile {
-    font-family: 'Source Sans Pro Black';
+    font-family: 'Source Sans Pro';
     font-size: 15pt;
     font-style: italic;
+    font-weight: 900;
     line-height: 20.5pt;
     text-decoration: none;
     padding-bottom: 25px;
