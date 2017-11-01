@@ -15,7 +15,7 @@ controllers.controller('mainController', ['$scope', '$timeout', '$routeParams', 
         $scope.lang = "_" + $routeParams.lang;
     }
 
-    var mobileExtension = isMobile() ? '/mobile' : '';
+    var mobileExtension = true ? '/mobile' : '';
 
     $scope.selectedContent = 'partials' + mobileExtension + '/locations/unlocation' + $scope.lang + '.jade';
 
